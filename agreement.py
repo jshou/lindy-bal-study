@@ -25,7 +25,11 @@ def lindify(annotation_entry):
 if __name__ == "__main__":
     with open('results.csv', 'r') as csvfile:
         results = []
-        for row in csv.reader(csvfile):
+        # for row in csv.reader(csvfile):
+        #     results += song_row_to_annotation_entries(row)
+
+        csv_rows = list(csv.reader(csvfile))
+        for row in csv_rows[4:]: # we don't have votes for first 4 songs for a couple participants yet
             results += song_row_to_annotation_entries(row)
 
         bal_annotation = AnnotationTask(data=[balify(r) for r in results])
