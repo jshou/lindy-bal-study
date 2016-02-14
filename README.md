@@ -14,10 +14,11 @@ participant. Votes are one of l, b, 2 or 0 for lindy, bal, both or neither.
 
 Attributes
 ----------
-`attributes.csv` contains the 5 binary features for each song hand labeled by
+`song_attributes.csv` contains the 6 binary features for each song hand labeled by
 Josh. We'll be using the features as potential predictors of whether not a song
 is bal/lindy danceable. The features are as follows:
 
+* Beats per minute
 * Triplety-swing
 * Strong backbeat
 * Melody with accents
