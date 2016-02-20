@@ -20,7 +20,7 @@ def gold_standards():
         lindy_gold = [] # gold standard, True is lindyable, False is not
 
         csv_rows = list(csv.reader(csvfile))
-        for row in csv_rows[4:]: # we don't have votes for first 4 songs for a couple participants yet
+        for row in csv_rows:
             bal_gold.append(mostly_danceable(row, balable))
             lindy_gold.append(mostly_danceable(row, lindyable))
 
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     bal_gold, lindy_gold = gold_standards()
 
     attributes = open('song_attributes.csv', 'r')
-    attribute_rows = list(csv.reader(attributes))[4:]
+    attribute_rows = list(csv.reader(attributes))
 
     speeds = [int(row[0]) for row in attribute_rows]
     triplety = [row[1] == '1' for row in attribute_rows]

@@ -7,7 +7,7 @@ with open('results.csv', 'r') as csvfile:
     neither = 0.0
 
     csv_rows = list(csv.reader(csvfile))
-    for row in csv_rows[4:]: # we don't have votes for first 4 songs for a couple participants yet
+    for row in csv_rows:
         bal_only += row.count('b')
         lindy_only += row.count('l')
         both += row.count('2')
